@@ -15,4 +15,5 @@ public class Order {
     private User placedBy;
     private List<Item> items;
     private Timestamp placedAt;
+    private Outlet outlet;
 }
