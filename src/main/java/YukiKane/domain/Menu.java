@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.cloud.gcp.data.firestore.Document;
 
-import java.util.List;
 import java.util.Set;
 
 @Data
@@ -15,7 +14,8 @@ import java.util.Set;
 @Document(collectionName = "Menus")
 public class Menu {
 
-    private List<Item> offerings;
+    private Outlet outlet;
+    private Set<Item> offerings;
     @DocumentId
     private String id;
 }

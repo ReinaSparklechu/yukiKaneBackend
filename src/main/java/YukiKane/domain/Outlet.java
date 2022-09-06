@@ -18,7 +18,6 @@ public class Outlet {
     private String id;
     private int maxOrders;
     private List<Order> queuedOrders;
-    private Menu menu;
 
     public int currentOrders() {
         return this.queuedOrders.size();
