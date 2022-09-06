@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    gcp:
+      firestore:
+        credentials:
+          location: classpath:reina-s-base-firebase-adminsdk-gbnda-4c87bdff41.json
+server:
+  port: 9000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
