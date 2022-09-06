@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/resources/reina-s-base-f6188597c02b.json
+/AuthServer/src/main/resources/reina-s-base-firebase-adminsdk-gbnda-4c87bdff41.json
