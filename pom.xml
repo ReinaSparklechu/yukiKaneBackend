@@ -67,12 +67,12 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-gcp-data-firestore</artifactId>
-			<version>1.2.6.RELEASE</version>
+			<version>1.2.8.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-gcp-starter-firestore</artifactId>
-			<version>1.2.6.RELEASE</version>
+			<version>1.2.8.RELEASE</version>
 		</dependency>
 	</dependencies>
 
@@ -84,7 +84,7 @@
 				<configuration>
 					<excludes>
 						<exclude>
-							<groupId>org.project-lombok</groupId>
+							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
@@ -92,7 +92,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	<modules>
-		<module>AuthServer</module>
-	</modules>
+
 </project>
