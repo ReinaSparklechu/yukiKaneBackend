@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gcp:
+      firestore:
+        credentials:
+          location: classpath:reina-s-base-firebase-adminsdk-gbnda-4c87bdff41.json
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:9000/oauth2/jwks

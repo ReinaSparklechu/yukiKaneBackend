@@ -1,0 +1,7 @@
+
+  spring:
+    cloud:
+      gcp:
+        firestore:
+          credentials:
+            location: reina-s-base-firebase-adminsdk-gbnda-4c87bdff41.json

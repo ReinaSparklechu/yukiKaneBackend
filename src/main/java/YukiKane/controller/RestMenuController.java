@@ -3,8 +3,10 @@ package YukiKane.controller;
 import YukiKane.domain.Item;
 import YukiKane.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.util.ArrayList;
 import java.util.logging.Logger;
@@ -29,5 +31,11 @@ public class RestMenuController {
     public Flux<Item> findItems(@PathVariable String tag) {
         Logger.getGlobal().info("Tag is: " +tag);
         return itemRepository.findItemByName(tag);
+    }
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Mono<Item> saveItem(@RequestBody Item item) {
+        Logger.getGlobal().info("saving item: " + item);
+        return itemRepository.save(item);
     }
 }
