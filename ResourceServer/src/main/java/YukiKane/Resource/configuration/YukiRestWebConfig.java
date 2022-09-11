@@ -10,12 +10,6 @@ public class YukiRestWebConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/item","/menu","/outlet")
-                .hasAuthority("SCOPE_writeStuff")
-                .antMatchers(HttpMethod.GET, "/orders")
-                .hasAuthority("SCOPE_outlet")
-                .antMatchers("/*").permitAll()
-                .and()
-                .oauth2ResourceServer(httpSecurityOAuth2ResourceServerConfigurer -> httpSecurityOAuth2ResourceServerConfigurer.jwt());
+                .anyRequest().permitAll().and().cors();
     }
 }

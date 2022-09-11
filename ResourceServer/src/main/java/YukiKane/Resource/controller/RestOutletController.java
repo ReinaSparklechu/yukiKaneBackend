@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 @RestController
 @RequestMapping(path = "/outlet", produces = "application/json")
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:9090")
 public class RestOutletController {
     @Autowired
     OutletRepository outletRepository;
