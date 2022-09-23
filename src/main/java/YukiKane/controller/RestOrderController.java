@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/order", produces = "application/json")
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:9090")
 public class RestOrderController {
     @Autowired
     private OrderRepository orderRepository;
