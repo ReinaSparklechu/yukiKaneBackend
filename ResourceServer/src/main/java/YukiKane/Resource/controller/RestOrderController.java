@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Iterator;
+import java.util.Map;
 
 @RestController
 @RequestMapping(path = "/order", produces = "application/json")
@@ -17,17 +19,10 @@ public class RestOrderController {
     @Autowired
     private OrderRepository orderRepository;
 
-    @PostMapping
-    @ResponseStatus
+    @PostMapping(consumes="application/json")
     // todo: change to only receive array of items and outlet name.
-    public Order placeOrder(@RequestBody String[] order, @RequestBody int[] qty, HttpServletRequest request) {
-        var headers = request.getHeaders("*").asIterator();
-        while (headers.hasNext()) {
-            System.out.println(headers.next());
-        }
-        System.out.println("receiving order");
+    public Order placeOrder(@RequestBody Order order ) {
         System.out.println(order);
-        System.out.println(qty);
         //Todo:this should send a message to the receiving store's end, this should also update the order list in an outlet
         return new Order();
     }
