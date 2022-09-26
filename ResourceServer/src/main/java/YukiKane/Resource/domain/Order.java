@@ -14,8 +14,7 @@ public class Order {
     @DocumentId
     private String id;
     private User placedBy;
-    private List<Item> items;
-
+    private List<String> items;
     private Timestamp placedAt;
-    private Outlet outlet;
+    private String outlet;
 }
