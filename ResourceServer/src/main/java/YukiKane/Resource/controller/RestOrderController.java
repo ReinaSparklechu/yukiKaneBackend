@@ -24,7 +24,7 @@ public class RestOrderController {
     public Order placeOrder(@RequestBody Order order ) {
         System.out.println(order);
         //Todo:this should send a message to the receiving store's end, this should also update the order list in an outlet
-        return new Order();
+        return orderRepository.save(order).block();
     }
     @GetMapping("/{id}")
     public Order getOrder(@PathVariable String id) {
