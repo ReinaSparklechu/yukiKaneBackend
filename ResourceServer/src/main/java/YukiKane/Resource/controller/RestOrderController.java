@@ -3,6 +3,7 @@ package YukiKane.Resource.controller;
 
 import YukiKane.Resource.domain.Order;
 import YukiKane.Resource.repository.OrderRepository;
+import YukiKane.Resource.service.RabbitOrderMessageService;
 import com.google.gson.annotations.JsonAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,11 +19,14 @@ import java.util.Map;
 public class RestOrderController {
     @Autowired
     private OrderRepository orderRepository;
+    @Autowired
+    private RabbitOrderMessageService orderMessage;
 
     @PostMapping(consumes="application/json")
     // todo: change to only receive array of items and outlet name.
     public Order placeOrder(@RequestBody Order order ) {
         System.out.println(order);
+        orderMessage.sendOrder(order);
         //Todo:this should send a message to the receiving store's end, this should also update the order list in an outlet
         return orderRepository.save(order).block();
     }

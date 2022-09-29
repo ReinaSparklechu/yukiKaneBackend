@@ -1,4 +1,9 @@
 spring:
+  rabbitmq:
+    host: armadillo-01.rmq.cloudamqp.com
+    port: 5672
+    username: insert username
+    password: insert password
   cloud:
     gcp:
       firestore:
