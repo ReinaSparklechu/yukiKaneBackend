@@ -15,6 +15,11 @@ public class Item {
     private String id;
     private String name;
     private String desc;
+    private Type type;
+
+    public enum Type{
+        DRINK,DESSERT
+    }
 
     public Item(String name) {
         this.name=name;
