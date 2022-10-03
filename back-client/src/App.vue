@@ -1,17 +1,10 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <login-page/>
+  <MainPane></MainPane>
 </template>
 
-<script>
-import loginPage from "@/components/LoginPage";
+<script setup>
+import MainPane from "@/components/MainPane"
 
-export default {
-  name: 'App',
-  components: {
-    loginPage
-  }
-}
 </script>
 
 <style>
