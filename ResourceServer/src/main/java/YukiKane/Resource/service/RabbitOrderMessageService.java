@@ -19,9 +19,6 @@ public class RabbitOrderMessageService {
     }
 
     public void sendOrder(Order order) {
-        MessageConverter converter= rabbitTemplate.getMessageConverter();
-        MessageProperties properties = new MessageProperties();
-        Message message=converter.toMessage(order,properties);
-        rabbitTemplate.send("YukiKane.order", message);
+        rabbitTemplate.convertAndSend("YukiKane.order", order.toString());
     }
 }
